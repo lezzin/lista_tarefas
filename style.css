@@ -1,0 +1,157 @@
+:root {
+    --bg-body: #fff;
+    --bg-todo: #201f1b;
+
+    --bg-primary: #3f3c37;
+
+    --font-color: #fff;
+    --details-color: #ff5e1e;
+
+    --button-check: rgb(64, 177, 64);
+    --button-pen: rgb(27, 132, 202);
+    --button-xmark: rgb(172, 34, 34);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input,
+button,
+select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background: var(--bg-body);
+    color: var(--font-color);
+
+    display: grid;
+    place-items: center;
+    padding: 3rem 0 6rem;
+
+
+    font-family: sans-serif;
+    font-size: 62.5%;
+}
+
+.todo__container {
+    background-color: var(--bg-todo);
+    border-radius: .25rem;
+    padding: 1.6rem 1.6rem 2rem;
+    max-width: 600px;
+    font-size: 1.2rem;
+    width: 100%;
+
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.5);
+}
+
+.todo__container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.forms__grid {
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.todo__form {
+    display: block;
+    width: 100%;
+}
+
+.todo__form .form__group {
+    display: grid;
+    width: inherit;
+    gap: 0.25rem;
+}
+
+.todo__form .input__group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.todo__form .input__group input,
+.todo__form .input__group select,
+.todo__form .input__group button {
+    padding: .6rem;
+}
+
+.todo__form .input__group input,
+.todo__form .input__group select {
+    border-radius: .25rem 0 0 .25rem;
+    background-color: var(--bg-primary);
+}
+
+.todo__form .input__group button {
+    border-radius: 0 .25rem .25rem 0;
+    background-color: var(--details-color);
+}
+
+.todo {
+    display: grid;
+    align-items: start;
+    gap: .3rem;
+    margin-top: 3rem;
+    list-style: none;
+}
+
+.todo .todo__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.3rem;
+    background-color: var(--bg-primary);
+    transition: all .3s ease-in-out;
+    padding: .3rem 0.3rem .3rem .6rem;
+    border-radius: .25rem;
+}
+
+.todo .todo__item.completed {
+    filter: brightness(80%);
+}
+
+.todo .todo__item.completed .todo__item_description {
+    text-decoration: line-through;
+}
+
+.todo .todo__item button {
+    padding: .6rem;
+    border-radius: .25rem;
+}
+
+.todo .todo__item .todo__item_description {
+    max-width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.btn__check {
+    background-color: var(--button-check);
+}
+
+.btn__pen {
+    background-color: var(--button-pen);
+}
+
+.btn__xmark {
+    background-color: var(--button-xmark);
+}
+
+.hidden {
+    display: none !important;
+}
