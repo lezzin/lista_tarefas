@@ -30,6 +30,11 @@ select {
 
 button {
     cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+button:hover {
+    filter: brightness(80%);
 }
 
 body {
@@ -39,7 +44,6 @@ body {
     display: grid;
     place-items: center;
     padding: 3rem 0 6rem;
-
 
     font-family: sans-serif;
     font-size: 62.5%;
@@ -118,7 +122,6 @@ body {
     justify-content: space-between;
     gap: 0.3rem;
     background-color: var(--bg-primary);
-    transition: all .3s ease-in-out;
     padding: .3rem 0.3rem .3rem .6rem;
     border-radius: .25rem;
 }
@@ -157,4 +160,15 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .todo__container {
+        max-width: unset;
+        min-height: 100vh;
+    }
 }
