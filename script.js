@@ -47,7 +47,11 @@ function renderTodoItem(element, index) {
 function loadTodos() {
     todoList.innerHTML = "";
     todos.forEach((element, index) => renderTodoItem(element, index));
+
     messageSpan.innerHTML = todos.length ? `Tarefas encontradas: ${todos.length}` : ``;
+
+    handleFilterTodo();
+    handleSearchTodo();
 }
 
 function editTodo(index) {
