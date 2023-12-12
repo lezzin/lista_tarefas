@@ -49,9 +49,6 @@ function loadTodos() {
     todos.forEach((element, index) => renderTodoItem(element, index));
 
     messageSpan.innerHTML = todos.length ? `Tarefas encontradas: ${todos.length}` : ``;
-
-    handleFilterTodo();
-    handleSearchTodo();
 }
 
 function editTodo(index) {
@@ -99,8 +96,8 @@ function handleEditTodo() {
 
     if (newDescription) {
         todos[index].description = newDescription;
-        loadTodos();
         saveStorage();
+        loadTodos();
         toggleForms();
     }
 }
