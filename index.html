@@ -32,9 +32,10 @@
 
                 <div class="form__group">
                     <label for="edit_input">Editar:</label>
-                    <div class="input__group">
+                    <div class="input__group two_btn">
                         <input type="text" id="edit_input" placeholder="Digite aqui a nova descrição da tarefa..."
                             autocomplete="off">
+                        <button type="button" id="cancel_edit_btn"><i class="fa-solid fa-xmark"></i></button>
                         <button type="button"><i class="fa-solid fa-plus"></i></button>
                     </div>
                 </div>
@@ -70,7 +71,8 @@
             </div>
         </div>
 
-        <ul class="todo"></ul>
+        <span class="message__muted"></span>
+        <ul class="todo"> </ul>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"

@@ -8,7 +8,10 @@ const forms = {
     another: document.querySelector(".forms__grid"),
 };
 
+const cancelEditBtn = document.querySelector("#cancel_edit_btn");
+
 const todoList = document.querySelector(".todo");
+const messageSpan = document.querySelector(".message__muted");
 let todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 function saveStorage() {
@@ -44,6 +47,7 @@ function renderTodoItem(element, index) {
 function loadTodos() {
     todoList.innerHTML = "";
     todos.forEach((element, index) => renderTodoItem(element, index));
+    messageSpan.innerHTML = todos.length ? `Tarefas encontradas: ${todos.length}` : ``;
 }
 
 function editTodo(index) {
@@ -53,9 +57,8 @@ function editTodo(index) {
     const inputHidden = forms.edit.querySelector("#edit_input_index");
 
     input.value = description;
-    input.focus();
-
     inputHidden.value = index;
+    input.focus();
 }
 
 function changeTodoStatus(index) {
@@ -100,19 +103,28 @@ function handleEditTodo() {
 
 function handleSearchTodo() {
     const search = forms.search.querySelector("#search_input").value.toLowerCase();
+    let length = 0;
 
     todoList.querySelectorAll(".todo__item").forEach((element) => {
         const description = element.querySelector(".todo__item_description").innerHTML.toLowerCase();
+
         element.classList.toggle("hidden", !description.includes(search));
+        !element.classList.contains("hidden") && length++;
     });
+
+    messageSpan.innerHTML = `Tarefas encontradas: ${length}`;
 }
 
 function handleFilterTodo() {
     const filter = forms.filter.querySelector("#filter_select").value.toLowerCase();
+    let length = 0;
 
     todoList.querySelectorAll(".todo__item").forEach((element) => {
         element.classList.toggle("hidden", !element.classList.contains(filter));
+        !element.classList.contains("hidden") && length++;
     });
+
+    messageSpan.innerHTML = `Tarefas encontradas: ${length}`;
 }
 
 function addEventListeners() {
@@ -132,8 +144,8 @@ function addEventListeners() {
     });
 
     forms.search.querySelector("#search_input").addEventListener("input", handleSearchTodo);
-
     forms.filter.querySelector("#filter_select").addEventListener("change", handleFilterTodo);
+    cancelEditBtn.addEventListener("click", toggleForms);
 }
 
 addEventListeners();
