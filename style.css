@@ -1,10 +1,9 @@
 :root {
-    --bg-body: #fff;
     --bg-todo: #201f1b;
 
     --bg-primary: #3f3c37;
 
-    --font-color: #fff;
+    --font-color: #f9f6ee;
     --details-color: #ff5e1e;
 
     --button-check: rgb(64, 177, 64);
@@ -20,44 +19,49 @@
 
 input,
 button,
-select {
+select,
+button {
     background-color: transparent;
-    border: none;
+    font-size: inherit;
     outline: none;
     color: inherit;
-    font-size: inherit;
+
+    border: 1px solid transparent;
+    transition: all .2s ease;
 }
 
 button {
     cursor: pointer;
-    transition: all .3s ease-in;
 }
 
 button:hover {
     filter: brightness(80%);
 }
 
-body {
-    background: var(--bg-body);
-    color: var(--font-color);
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+    border-color: var(--details-color);
+}
 
-    display: grid;
-    place-items: center;
-    padding: 3rem 0 6rem;
+body {
+    background-color: var(--bg-todo);
+    color: var(--font-color);
 
     font-family: sans-serif;
     font-size: 62.5%;
 }
 
 .todo__container {
-    background-color: var(--bg-todo);
     border-radius: .25rem;
     padding: 1.6rem 1.6rem 2rem;
-    max-width: 600px;
     font-size: 1.2rem;
-    width: 100%;
 
-    box-shadow: 0 5px 15px rgb(0 0 0 / 0.5);
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 .todo__container h1 {
@@ -81,6 +85,11 @@ body {
     width: 100%;
 }
 
+.todo__form#edit_form {
+    border-bottom: 1px solid var(--bg-primary);
+    padding-bottom: 1rem;
+}
+
 .todo__form .form__group {
     display: grid;
     width: inherit;
@@ -92,10 +101,19 @@ body {
     grid-template-columns: 1fr auto;
 }
 
+.todo__form .input__group.two_btn {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.todo__form .input__group.two_btn button:first-of-type {
+    border-radius: 0;
+}
+
 .todo__form .input__group input,
 .todo__form .input__group select,
 .todo__form .input__group button {
-    padding: .6rem;
+    padding: .6rem .7rem;
 }
 
 .todo__form .input__group input,
@@ -109,11 +127,18 @@ body {
     background-color: var(--details-color);
 }
 
+.message__muted {
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 0.3rem;
+    font-size: .9rem;
+    filter: brightness(60%);
+}
+
 .todo {
     display: grid;
     align-items: start;
     gap: .3rem;
-    margin-top: 3rem;
     list-style: none;
 }
 
@@ -135,7 +160,6 @@ body {
 }
 
 .todo .todo__item button {
-    padding: .6rem;
     border-radius: .25rem;
 }
 
@@ -148,27 +172,19 @@ body {
 
 .btn__check {
     background-color: var(--button-check);
+    padding: .6rem .8rem;
 }
 
 .btn__pen {
     background-color: var(--button-pen);
+    padding: .6rem .7rem;
 }
 
 .btn__xmark {
+    padding: .6rem .8rem;
     background-color: var(--button-xmark);
 }
 
 .hidden {
     display: none !important;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-    }
-
-    .todo__container {
-        max-width: unset;
-        min-height: 100vh;
-    }
 }
