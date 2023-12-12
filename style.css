@@ -53,11 +53,6 @@ body {
     font-size: 62.5%;
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 100%;
-    }
-}
 
 .todo__container {
     border-radius: .25rem;
@@ -193,4 +188,18 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 768px) {
+    .todo__container {
+        font-size: 1.8rem;
+    }
+
+    .todo__container h1 {
+        font-size: 2.6rem;
+    }
+
+    .message__muted {
+        font-size: 1.2rem;
+    }
 }
