@@ -27,3 +27,9 @@ Basta acessar o link: [clique aqui para acessar](https://lista-tarefas-xi.vercel
 4. Para filtrar uma tarefa, clique no campo de seleção e selecione o filtro desejado.
 5. Para editar uma tarefa, clique no botão com icone de lápis e digite a nova descrição no primeiro campo de entrada.
 6. Para remover uma tarefa, clique no botão com icone de lixeira ao lado da tarefa.
+
+## Tecnologias utilizadas:
+
+* HTML
+* CSS
+* JavaScript
