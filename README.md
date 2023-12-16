@@ -2,6 +2,7 @@
 
 # Lista de tarefas
 
+
 Um aplicativo web simples de lista de tarefas construído com HTML, CSS e JavaScript. Este aplicativo permite aos usuários adicionar, remover, editar, pesquisar e filtrar tarefas. As tarefas são armazenadas no armazenamento local, garantindo que persistam mesmo se a página for atualizada.
 
 ## Recursos
@@ -36,7 +37,7 @@ Basta acessar o link: [clique aqui para acessar](https://lista-tarefas-xi.vercel
 * CSS
 * JavaScript
 
-### 🔗 Minhas redes sociais para contato
+## 🔗 Minhas redes sociais para contato
 
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/leandroadrian_/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leandro-adrian)
