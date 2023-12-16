@@ -1,5 +1,7 @@
 ![Foto do projeto](https://github.com/lezzin/lista_tarefas/assets/103830032/1384d7a7-fe20-41d4-8bc0-b57370e097fa)
 
+# Lista de tarefas
+
 Um aplicativo web simples de lista de tarefas construído com HTML, CSS e JavaScript. Este aplicativo permite aos usuários adicionar, remover, editar, pesquisar e filtrar tarefas. As tarefas são armazenadas no armazenamento local, garantindo que persistam mesmo se a página for atualizada.
 
 ## Recursos
@@ -10,7 +12,7 @@ Um aplicativo web simples de lista de tarefas construído com HTML, CSS e JavaSc
 - Pesquisar por tarefa especifica
 - Filtrar por tarefas concluidas e não concluidas
 
-## Começando
+## Guia de instalação
 
 Para usar o aplicativo de lista de tarefas:
 
